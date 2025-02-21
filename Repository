@@ -1,0 +1,22 @@
+REPOSITORY
+==========
+#mkdir /sangwa
+#cd /media/RHEL_6.0\ i386\ Disc\ 1/Packages/
+#cp * -v /saro
+#rpm -ivh deltarpm Tab key
+#rpm -ivh python-delta Tab key
+#rpm -ivh create Tab Key
+#createrepo -v /sangwa
+#vim /etc/yum.repos.d/arlene.repo
+*inside the file append:
+[server]
+name= Linux Server
+baseurl=file:///sangwa
+enabled=1
+gpgcheck=0 
+esc :wq
+#yum repolist
+if there are 0 remove packagekit
+#cd /etc/yum.repos.d/
+#ls
+#rm -f pack tab key
