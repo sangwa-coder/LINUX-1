@@ -1,0 +1,27 @@
+DHCP CONFIGURATION
+==================
+First configure network
+#system-config-network-tui 
+or
+#Setup and follow the steps
+#yum install -y dhcp
+#rpm -qa dhcp
+#vim /etc/dhcp/dhcpd.conf
+put 
+#dhcp configuration in dhcpd.conf
+allow booting;
+allow bootp;
+authoritative;
+
+option domain-name "linux.com";
+
+default-lease-time 1200;
+max-lease-time 2400;
+
+subnet 192.168.10.0 netmask 255.255.255.0{
+range 192.168.10.5 192.168.10.10;
+option routers 192.168.10.1;
+next-server 192.168.10.2;
+}
+#service dhcpd restart
+#in case there is error troubleshoot using: dhcpd -t
